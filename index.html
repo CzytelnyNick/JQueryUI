@@ -15,53 +15,17 @@
 
 <body>
     
-<canvas width="200" height="600" id="can"></canvas>
 <script>
-  var c = can.getContext("2d");
-
-  var w = c.canvas.width;
-  var h = c.canvas.height;
-  var skok = 10;
-  var czas;
-
-// kolorowa piłka
-
-
-// parametry animacji
-var skok = 10;
-var czas;
-// parametry ruchu
-var x=20;
-var y=20;
-var vx=10;
-var vy=0;
-var r=15;	
-var kolor="red";
-var g=9.81;     //grawitacja
-var dt=0.1;     //skok czasu
-var opor=0.999; //opór powietrza
-var spr=0.8;   //sprężystość
-// rekurencyjna animacja
+  
 function grawitacja() {
-  c.clearRect(0, 0, w, h);
-  c.strokeStyle="black";
-  c.strokeRect(0, 0, w, h);
-  pilka(x,y,r,kolor);
-  x=x+vx*dt;
-  y=y+vy*dt;
-  vy=vy+g*dt;
-  vx=vx*opor;
-  vy=vy*opor;
-  if (y>h-r-vy*dt){vy=-(vy-g*dt)*spr}
-  clearTimeout(czas);
-  czas = setTimeout(grawitacja, skok); 
+  
 }
 grawitacja();
 </script>
     <script src="script.js">
     </script>
     <div id="drag">
-        aaaa
+        <div id="scope"></div>
     </div>
 
 </body>
