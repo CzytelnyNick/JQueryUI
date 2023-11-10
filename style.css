@@ -1,11 +1,11 @@
 #scope{
-    border-radius: 100%;
-    width: 50px;
-    border: 2px solid black;
-    height: 50px;
-    background-color: transparent;
-    position: absolute;
+    
+    
 }
 #scope:active{
-    cursor:none
+    /* cursor:none */
+}
+#droppable {
+    width: 200px;
+    height: 200px
 }
