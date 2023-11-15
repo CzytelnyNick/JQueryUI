@@ -1,20 +1,25 @@
-$(function () {
-    let oldx = 0;
-    let left = 0;
-    let right = 0;
+score = 0
+$(function(){
+  $("#draggable").draggable();
+  $("#droppable").droppable({
+    tolerance:"fit",
+    
+      over: function () {
 
-    $("#drag").draggable({
-      drag: function (e) {
-        
-            $(document).keydown(function (elem) { 
-                if(elem.keyCode == 32){
-                    console.log("a")
-                } 
-            })
-        
+          $(document).keypress(function (e) {
+              if (e.keyCode == 32) {
+                  $("#droppable").remove()
+                  score+=10
+                  $("#score").text("Points: " + score)
+              }
+              
+              
+          });
+
       },
-      stop: function () {
-        grawitacja();
+      out: function() {
+        console.log("aa")
       }
-    });
   });
+})
+        

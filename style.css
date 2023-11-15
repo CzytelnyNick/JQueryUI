@@ -1,11 +1,56 @@
-#scope{
-    border-radius: 100%;
+#draggable {
+    border-radius: 50%;
     width: 50px;
-    border: 2px solid black;
-    height: 50px;
-    background-color: transparent;
-    position: absolute;
-}
-#scope:active{
+     border: 2px solid black;
+     height: 50px;
+     background-color: transparent;
+   }
+   #droppable {
+     position: absolute;
+     left: 250px;
+     top: 0;
+     width: 10px;
+     height: 10px;
+     /* background: #999; */
+     /* color: #fff; */
+     padding: 10px;
+   }
+   #dot{
+    border-radius: 50%;
+    background-color: red;
+    width: 5px;
+    height: 5px;
+    margin: 21.5px;
+    font-family: 'Magic Retro', sans-serif;
+   }
+
+#draggable:active{
     cursor:none
+}
+.sprite {
+    width: 40px; /* szerokość pojedynczej klatki sprite'a */
+    height: 300px; /* wysokość pojedynczej klatki sprite'a */
+    background-image: url('deer.png'); /* ścieżka do pliku z sprite'em */
+    animation: animateSprite 2s steps(5) infinite; /* 4 to liczba klatek sprite'a */
+    background-size: 200px;
+    /* Opcjonalne: dodatkowe stylizacje, takie jak pozycja, ramka, itp. */
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    /* transform: translate(-50%, -20%); */
+    border: 1px solid #000;
+}
+
+@keyframes animateSprite {
+    from {
+        background-position: 00 10;
+    }
+    to {
+        background-position: -400px 0; /* 400px to szerokość całego sprite'a (4 klatki * 100px) */
+    }
+}
+#droppable {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px
 }
